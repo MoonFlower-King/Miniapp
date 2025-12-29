@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+            
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/text_main"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="写日记"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"/>
+            
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="保存"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:padding="8dp"/>
+        </RelativeLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+        <!-- Form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Date Picker -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_bg">
+                
+                <LinearLayout
+                    android:id="@+id/layoutDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📅 日期"
+                        android:textColor="@color/text_main"
+                        android:textSize="14sp"/>
+                    
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2025-12-29"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:gravity="end"/>
+                    
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@android:drawable/ic_menu_more"
+                        app:tint="@color/text_hint"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Mood Selector -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_bg">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今天的心情"
+                        android:textColor="@color/text_main"
+                        android:textSize="14sp"/>
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center">
+                        
+                        <TextView android:id="@+id/moodHappy" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="😊" android:textSize="32sp" android:gravity="center" android:padding="8dp"/>
+                        <TextView android:id="@+id/moodExcited" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🎉" android:textSize="32sp" android:gravity="center" android:padding="8dp"/>
+                        <TextView android:id="@+id/moodNeutral" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="😐" android:textSize="32sp" android:gravity="center" android:padding="8dp"/>
+                        <TextView android:id="@+id/moodSad" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="😢" android:textSize="32sp" android:gravity="center" android:padding="8dp"/>
+                        <TextView android:id="@+id/moodLove" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="❤️" android:textSize="32sp" android:gravity="center" android:padding="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Title Input -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_bg">
+                
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:hint="标题 (可选)"
+                    android:textColorHint="@color/text_hint"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:inputType="text"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Content Input -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_bg">
+                
+                <EditText
+                    android:id="@+id/etContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:padding="16dp"
+                    android:hint="今天发生了什么..."
+                    android:textColorHint="@color/text_hint"
+                    android:textColor="@color/text_main"
+                    android:textSize="14sp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"/>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

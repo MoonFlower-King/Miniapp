@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:minWidth="300dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入每月预算金额 (¥)"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etBudget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="3000"
+        android:textSize="18sp"
+        android:textColor="@color/text_main"
+        android:background="@drawable/bg_ai_input"
+        android:padding="12dp"/>
+
+</LinearLayout>

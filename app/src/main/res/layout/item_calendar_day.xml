@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutDay"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="2dp"
+    android:background="@drawable/bg_calendar_day_selector">
+
+    <TextView
+        android:id="@+id/tvDayNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/text_main"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvDayIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+100"
+        android:textColor="#4CAF50"
+        android:textSize="8sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvDayExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-50"
+        android:textColor="#F44336"
+        android:textSize="8sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

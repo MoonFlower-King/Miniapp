@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>知岁 (ZhiSui) - 软件架构图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .mermaid {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎋 知岁 (ZhiSui) - 软件架构图</h1>
+    <p>MVC 分层架构 (Model - View - Controller)</p>
+
+    <div class="mermaid">
+        graph TD
+        subgraph User_Layer [用户交互层]
+        direction TB
+        User((用户))
+        MA[MainContainerActivity<br />(主容器)]
+        end
+
+        subgraph View_Controller [视图与控制层]
+        direction TB
+        VP[ViewPager2]
+
+        subgraph Fragments
+        L_Frag[LedgerFragment<br />(记账页)]
+        T_Frag[TaskFragment<br />(清单页)]
+        A_Frag[AiFragment<br />(AI页)]
+        end
+
+        subgraph Adapters
+        TrAd[TransactionAdapter]
+        ToAd[TodoAdapter]
+        end
+        end
+
+        subgraph Logic_Service [业务逻辑层]
+        AM[AiManager<br />(网络请求)]
+        CL[CalendarLogic]
+        end
+
+        subgraph Data_Layer [数据持久层]
+        DB[(SQLite Database<br />DatabaseHelper)]
+        SP[SharedPreferences<br />(配置)]
+        API[DeepSeek API<br />(云端)]
+        end
+
+        %% Relationships
+        User --> MA
+        MA --> VP
+        VP --> L_Frag
+        VP --> T_Frag
+        VP --> A_Frag
+
+        L_Frag --> TrAd
+        L_Frag --> DB
+
+        T_Frag --> ToAd
+        T_Frag --> DB
+        T_Frag --> SP
+
+        A_Frag --> AM
+        AM --> API
+
+        TrAd -.-> DB
+        ToAd -.-> DB
+
+        style User_Layer fill:#e3f2fd,stroke:#2196f3
+        style View_Controller fill:#e8f5e9,stroke:#4caf50
+        style Logic_Service fill:#fff3e0,stroke:#ff9800
+        style Data_Layer fill:#f3e5f5,stroke:#9c27b0
+    </div>
+</body>
+
+</html>

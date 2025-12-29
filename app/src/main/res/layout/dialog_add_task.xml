@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任务名称 *"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"/>
+        
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入任务名称"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Description Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="描述"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+        
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="添加任务描述..."
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Status Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="状态"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            
+            <RadioButton
+                android:id="@+id/rbNotStarted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未开始"
+                android:textSize="13sp"
+                android:checked="true"/>
+            
+            <RadioButton
+                android:id="@+id/rbInProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="进行中"
+                android:textSize="13sp"/>
+            
+            <RadioButton
+                android:id="@+id/rbCompleted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="已完成"
+                android:textSize="13sp"/>
+        </RadioGroup>
+
+        <!-- Priority Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="优先级"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            
+            <RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🔴 高"
+                android:textSize="14sp"/>
+            
+            <RadioButton
+                android:id="@+id/rbMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🟡 中"
+                android:textSize="14sp"
+                android:checked="true"/>
+            
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🟢 低"
+                android:textSize="14sp"/>
+        </RadioGroup>
+
+        <!-- Assignee Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="负责人"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+        
+        <EditText
+            android:id="@+id/etAssignee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入负责人姓名"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Due Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="截止日期"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/layoutDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_tag_outline">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅"
+                android:textSize="16sp"/>
+            
+            <TextView
+                android:id="@+id/tvDueDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选择截止日期 (可选)"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginStart="8dp"/>
+            
+            <TextView
+                android:id="@+id/btnClearDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清除"
+                android:textSize="12sp"
+                android:textColor="@color/expense_red"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- Tags Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标签"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+        
+        <EditText
+            android:id="@+id/etTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入标签，用逗号分隔"
+            android:inputType="text"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Attachment Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="附件"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/layoutAttachment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_tag_outline">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📎"
+                android:textSize="16sp"/>
+            
+            <TextView
+                android:id="@+id/tvAttachment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="添加附件 (可选)"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginStart="8dp"/>
+            
+             <TextView
+                android:id="@+id/btnClearAttachment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清除"
+                android:textSize="12sp"
+                android:textColor="@color/expense_red"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

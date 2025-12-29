@@ -1,0 +1,225 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/28692/.gradle/wrapper/dists/gradle-9.0-milestone-1-bin/3vdepk4s12bybhohyuvjcm1bd/gradle-9.0-milestone-1/lib/native-platform-0.22-milestone-28.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:28: 错误: 找不到符号
+public class DiaryListActivity extends AppCompatActivity implements TodoAdapter.OnTodoActionListener {
+                                                                               ^
+  符号:   类 OnTodoActionListener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:24: 错误: 找不到符号
+    public TodoAdapter(List<TodoItem> todoList, OnTodoActionListener listener) {
+                                                ^
+  符号:   类 OnTodoActionListener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:32: 错误: 找不到符号
+public class TaskFragment extends Fragment implements TodoAdapter.OnTodoActionListener {
+                                                                 ^
+  符号:   类 OnTodoActionListener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:276: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:283: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:288: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:302: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:25: 错误: 找不到符号
+        this.todoList = todoList;
+            ^
+  符号: 变量 todoList
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:26: 错误: 找不到符号
+        this.listener = listener;
+            ^
+  符号: 变量 listener
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:49: 错误: 找不到符号
+        TodoItem item = todoList.get(position);
+                        ^
+  符号:   变量 todoList
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:65: 错误: 找不到符号
+            if (listener != null) {
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:66: 错误: 找不到符号
+                listener.onTodoToggle(item, isChecked);
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:90: 错误: 找不到符号
+                if (listener != null)
+                    ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:91: 错误: 找不到符号
+                    listener.onStatusClick(item);
+                    ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:157: 错误: 找不到符号
+            if (listener != null)
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:158: 错误: 找不到符号
+                listener.onTodoClick(item);
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:162: 错误: 找不到符号
+            if (listener != null)
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:163: 错误: 找不到符号
+                listener.onTodoLongClick(item);
+                ^
+  符号:   变量 listener
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:170: 错误: 找不到符号
+        return todoList.size();
+               ^
+  符号:   变量 todoList
+  位置: 类 TodoAdapter
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:174: 错误: 找不到符号
+        this.todoList = newList;
+            ^
+  符号: 变量 todoList
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:341: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:348: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:353: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:367: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+24 个错误
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:28: 错误: 找不到符号
+  public class DiaryListActivity extends AppCompatActivity implements TodoAdapter.OnTodoActionListener {
+                                                                                 ^
+    符号:   类 OnTodoActionListener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:24: 错误: 找不到符号
+      public TodoAdapter(List<TodoItem> todoList, OnTodoActionListener listener) {
+                                                  ^
+    符号:   类 OnTodoActionListener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:32: 错误: 找不到符号
+  public class TaskFragment extends Fragment implements TodoAdapter.OnTodoActionListener {
+                                                                   ^
+    符号:   类 OnTodoActionListener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:49: 错误: 找不到符号
+          TodoItem item = todoList.get(position);
+                          ^
+    符号:   变量 todoList
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:65: 错误: 找不到符号
+              if (listener != null) {
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:66: 错误: 找不到符号
+                  listener.onTodoToggle(item, isChecked);
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:90: 错误: 找不到符号
+                  if (listener != null)
+                      ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:91: 错误: 找不到符号
+                      listener.onStatusClick(item);
+                      ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:157: 错误: 找不到符号
+              if (listener != null)
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:158: 错误: 找不到符号
+                  listener.onTodoClick(item);
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:162: 错误: 找不到符号
+              if (listener != null)
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:163: 错误: 找不到符号
+                  listener.onTodoLongClick(item);
+                  ^
+    符号:   变量 listener
+    位置: 类 TodoAdapter
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:170: 错误: 找不到符号
+          return todoList.size();
+                 ^
+    符号:   变量 todoList
+    位置: 类 TodoAdapter
+  注: 某些输入文件使用或覆盖了已过时的 API。
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:276: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:283: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:288: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\DiaryListActivity.java:302: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:341: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:348: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:353: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TaskFragment.java:367: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:25: 错误: 找不到符号
+          this.todoList = todoList;
+              ^
+    符号: 变量 todoList
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:26: 错误: 找不到符号
+          this.listener = listener;
+              ^
+    符号: 变量 listener
+  C:\Users\28692\Desktop\miniapp\app\src\main\java\com\example\pocketledger\TodoAdapter.java:174: 错误: 找不到符号
+          this.todoList = newList;
+              ^
+    符号: 变量 todoList
+  24 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 6s

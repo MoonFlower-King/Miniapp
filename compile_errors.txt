@@ -1,0 +1,175 @@
+﻿.\gradlew.bat : WARNI
+NG: A restricted meth
+od in java.lang.Syste
+m has been called
+所在位置 行:1 字符: 1
++ .\gradlew.bat compi
+leDebugJavaWithJavac 
+2>&1 | Out-File -File
+Path com ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (WARNING   
+ : A rest...has b    
+een called:Strin    g
+) [], RemoteExc    ep
+tion
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+WARNING: java.lang.Sy
+stem::load has been c
+alled by net.rubygrap
+efruit.platform.inter
+nal.NativeLibraryLoad
+er in an unnamed modu
+le (file:/C:/Users/28
+692/.gradle/wrapper/d
+ists/gradle-9.0-miles
+tone-1-bin/3vdepk4s12
+bybhohyuvjcm1bd/gradl
+e-9.0-milestone-1/lib
+/native-platform-0.22
+-milestone-28.jar)
+WARNING: Use --enable
+-native-access=ALL-UN
+NAMED to avoid a warn
+ing for callers in th
+is module
+WARNING: Restricted m
+ethods will be blocke
+d in a future release
+ unless native access
+ is enabled
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+
+> Task :app:compileDebugJavaWithJavac FAILED
+C:\Users\28692\Deskto
+p\miniapp\app\src\mai
+n\java\com\example\po
+cketledger\MainActivi
+ty.java:168: 閿欒: 鎵句笉
+鍒扮鍙?            Text
+View tvAmt = view.fin
+dViewById(R.id.tvStat
+Amount);
+                     
+                     
+         ^
+  绗﹀彿:   鍙橀噺 tvStatAm
+ount
+  浣嶇疆: 绫?id
+C:\Users\28692\Deskto
+p\miniapp\app\src\mai
+n\java\com\example\po
+cketledger\MainActivi
+ty.java:169: 閿欒: 鎵句笉
+鍒扮鍙?            Line
+arProgressIndicator p
+rogress = view.findVi
+ewById(R.id.statProgr
+ess);
+                     
+                     
+                     
+      ^
+  绗﹀彿:   鍙橀噺 statProg
+ress
+  浣嶇疆: 绫?id
+娉? 鏌愪簺杈撳叆鏂囦欢浣跨敤鎴栬鐩栦簡
+宸茶繃鏃剁殑 API銆?
+娉? 鏈夊叧璇︾粏淇℃伅, 璇蜂娇鐢?-X
+lint:deprecation 閲嶆柊缂
+栬瘧銆?
+2 涓敊璇?
+
+[Incubating] Problems report is available at: file:///C:/Users/28692/Desktop/miniapp/build/reports/problems/problems-report.html
+
+FAILURE: Build failed
+ with an exception.
+
+* What went wrong:
+Execution failed for 
+task ':app:compileDeb
+ugJavaWithJavac'.
+> Compilation failed;
+ see the compiler out
+put below.
+  娉? 鏈夊叧璇︾粏淇℃伅, 璇蜂娇鐢?
+-Xlint:deprecation 閲嶆
+柊缂栬瘧銆?
+  C:\Users\28692\Desk
+top\miniapp\app\src\m
+ain\java\com\example\
+pocketledger\MainActi
+vity.java:168: 閿欒: 鎵
+句笉鍒扮鍙?              
+TextView tvAmt = view
+.findViewById(R.id.tv
+StatAmount);
+                     
+                     
+           ^
+    绗﹀彿:   鍙橀噺 tvStat
+Amount
+    浣嶇疆: 绫?id
+  C:\Users\28692\Desk
+top\miniapp\app\src\m
+ain\java\com\example\
+pocketledger\MainActi
+vity.java:169: 閿欒: 鎵
+句笉鍒扮鍙?              
+LinearProgressIndicat
+or progress = view.fi
+ndViewById(R.id.statP
+rogress);
+                     
+                     
+                     
+        ^
+    绗﹀彿:   鍙橀噺 statPr
+ogress
+    浣嶇疆: 绫?id
+  娉? 鏌愪簺杈撳叆鏂囦欢浣跨敤鎴栬鐩
+栦簡宸茶繃鏃剁殑 API銆?
+  2 涓敊璇?
+
+* Try:
+> Check your code and
+ dependencies to fix 
+the compilation error
+(s)
+> Run with --scan to 
+get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.0-milestone-1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2s
+18 actionable tasks: 1 executed, 17 up-to-date

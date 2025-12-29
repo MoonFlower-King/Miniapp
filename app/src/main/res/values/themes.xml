@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme - DayNight for automatic light/dark switching -->
+    <style name="Theme.PocketLedger" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/bg_gray</item>
+        <item name="android:colorBackground">@color/bg_gray</item>
+        
+        <!-- Status bar - follows theme -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <item name="android:windowLightStatusBar">@bool/is_light_status_bar</item>
+        
+        <!-- Card and surface colors -->
+        <item name="colorSurface">@color/card_bg</item>
+        <item name="colorOnSurface">@color/text_main</item>
+    </style>
+    
+    <style name="CardStyle">
+        <item name="android:background">@color/card_bg</item>
+    </style>
+</resources>

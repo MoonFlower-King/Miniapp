@@ -1,0 +1,14 @@
+[1.164s][error][cds] Failed to commit static  region #1 (ReadOnly)
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/28692/.gradle/wrapper/dists/gradle-9.0-milestone-1-bin/3vdepk4s12bybhohyuvjcm1bd/gradle-9.0-milestone-1/lib/native-platform-0.22-milestone-28.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 7344088 bytes. Error detail: Chunk::new
+# An error report file with more information is saved as:
+# C:\Users\28692\Desktop\miniapp\hs_err_pid25708.log
+#
+# Compiler replay data is saved as:
+# C:\Users\28692\Desktop\miniapp\replay_pid25708.log

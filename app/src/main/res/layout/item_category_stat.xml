@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="8dp">
+
+    <View
+        android:id="@+id/colorDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/bg_circle_blue"
+        android:layout_marginEnd="12dp"/>
+
+    <TextView
+        android:id="@+id/tvStatCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="餐饮"
+        android:textColor="@color/text_main"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvStatPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25%"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"/>
+
+</LinearLayout>

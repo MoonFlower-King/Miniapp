@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">知岁</string>
+    <string name="add_transaction">记一笔</string>
+    <string name="balance">总资产</string>
+    <string name="income">本月收入</string>
+    <string name="expense">本月支出</string>
+    <string name="save">保存</string>
+    <string name="amount">金额</string>
+    <string name="note">备注</string>
+    <string name="category">分类</string>
+    <string name="type_income">收入</string>
+    <string name="type_expense">支出</string>
+    <string name="recent_transactions">最近交易</string>
+    <string name="delete_confirm_title">删除记录</string>
+    <string name="delete_confirm_msg">确定要删除这条记录吗？</string>
+    <string name="delete_btn">删除</string>
+    <string name="cancel_btn">取消</string>
+    <string name="delete_success">已删除</string>
+    <string name="save_success">保存成功</string>
+    <string name="save_fail">保存失败</string>
+    <string name="input_amount_hint">请输入金额</string>
+</resources>

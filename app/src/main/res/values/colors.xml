@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors - Soft Blue like Kapi -->
+    <color name="primary">#4A90D9</color>
+    <color name="primary_dark">#3A7BC8</color>
+    <color name="primary_light">#E3F2FD</color>
+    <color name="primary_gradient_start">#E8F4FD</color>
+    <color name="primary_gradient_end">#D0E8FF</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent">#FF9500</color>
+    <color name="accent_orange">#FF9500</color>
+    <color name="accent_teal">#34C759</color>
+    
+    <!-- Income/Expense Colors -->
+    <color name="income_green">#34C759</color>
+    <color name="income_green_light">#E8F5E9</color>
+    <color name="expense_red">#FF3B30</color>
+    <color name="expense_red_light">#FFEBEE</color>
+    <color name="income_yellow">#FFCC00</color>
+    <color name="income_text">#FF9500</color>
+    
+    <!-- Base Colors - Pure and Clean -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bg_gray">#F7F8FA</color>
+    <color name="bg_light">#FFFFFF</color>
+    <color name="card_bg">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_main">#1D1D1F</color>
+    <color name="text_secondary">#86868B</color>
+    <color name="text_hint">#C7C7CC</color>
+    <color name="divider">#E5E5EA</color>
+    
+    <!-- Card Text on Gradient -->
+    <color name="card_text_primary">#2C5282</color>
+    <color name="card_text_secondary">#4A7298</color>
+    
+    <!-- Feature Card Colors -->
+    <color name="kapi_blue">#F0F7FF</color>
+    <color name="kapi_text">#4A90D9</color>
+    <color name="card_income_bg">#E8F5E9</color>
+    <color name="card_expense_bg">#FFEBEE</color>
+    
+    <!-- Gradient Header -->
+    <color name="header_start">#E8F4FD</color>
+    <color name="header_end">#D0E8FF</color>
+    
+    <!-- AI Assistant Colors -->
+    <color name="ai_welcome_bg">#F0F7FF</color>
+    <color name="btn_cancel_bg">#F2F2F7</color>
+    <color name="ai_input_bg">#F2F2F7</color>
+    
+    <!-- Status bar -->
+    <color name="status_bar_color">@color/white</color>
+</resources>

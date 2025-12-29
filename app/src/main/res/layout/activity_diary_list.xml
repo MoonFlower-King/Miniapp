@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+        
+        <TextView
+            android:id="@+id/tvNavDiary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="任务清单"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:gravity="center"/>
+        
+        <TextView
+            android:id="@+id/tvNavLedger"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="记账"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"/>
+        
+        <TextView
+            android:id="@+id/tvNavAi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="AI助手"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"/>
+    </LinearLayout>
+    
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✅"
+                android:textSize="28sp"/>
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="任务跟踪器"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"
+                android:layout_marginStart="12dp"/>
+            
+            <!-- New Task Button -->
+            <TextView
+                android:id="@+id/btnNewTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ 新建"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_button_primary"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"/>
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用你的方式,有序管理任务。"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- View Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="16dp">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+            
+            <TextView
+                android:id="@+id/tabAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 所有任务"
+                android:textSize="13sp"
+                android:textColor="@color/text_main"
+                android:background="@drawable/bg_tab_selected"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+            
+            <TextView
+                android:id="@+id/tabByStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📊 按状态"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:background="@drawable/bg_tab_normal"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+            
+            <TextView
+                android:id="@+id/tabToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👤 我的任务"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:background="@drawable/bg_tab_normal"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+            
+            <TextView
+                android:id="@+id/tabList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋 清单"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:background="@drawable/bg_tab_normal"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+    
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+    <!-- Column Headers -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:gravity="center_vertical"
+        android:background="@color/bg_gray">
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Aa 任务名称"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            android:drawablePadding="4dp"/>
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="◎ 优先级"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            android:gravity="center"/>
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⚡ 状态"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            android:gravity="center"/>
+        
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="📅 截止日期"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            android:gravity="end"/>
+    </LinearLayout>
+    
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/layoutEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📋"
+            android:textSize="48sp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无任务"
+            android:textSize="18sp"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击下方添加你的第一个任务"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Task List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTodos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Add Task Button (Bottom) -->
+    <LinearLayout
+        android:id="@+id/layoutAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="14dp"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="18sp"
+            android:textColor="@color/text_hint"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新建任务"
+            android:textSize="14sp"
+            android:textColor="@color/text_hint"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+    
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+</LinearLayout>

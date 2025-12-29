@@ -1,0 +1,29 @@
+# Gradle files
+.gradle/
+build/
+app/build/
+
+# Local configuration file (sdk.dir)
+local.properties
+
+# Android Studio generated files
+.idea/
+.DS_Store
+*.iml
+*.ide
+*.class
+captures/
+.externalNativeBuild
+.cxx
+*.apk
+*.ap_
+
+# Python artifacts (if any)
+__pycache__/
+*.py[cod]
+
+# Log files
+*.log
+*.log.*
+hs_err_pid*
+replay_pid*

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PocketLedger"
+        tools:targetApi="31"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
+        
+        <!-- Main Container with ViewPager2 - New Launcher -->
+        <activity
+            android:name=".MainContainerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Legacy activities - kept for backward compatibility -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".AddTransactionActivity"
+            android:exported="false"
+            android:label="记一笔" />
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false"
+            android:label="全部记录" />
+        <activity
+            android:name=".AiAssistantActivity"
+            android:exported="false"
+            android:label="AI助手" />
+        <activity
+            android:name=".DataManageActivity"
+            android:exported="false"
+            android:label="数据管理" />
+        <activity
+            android:name=".DiaryListActivity"
+            android:exported="false"
+            android:label="日记清单" />
+        <activity
+            android:name=".AddDiaryActivity"
+            android:exported="false"
+            android:label="写日记" />
+    </application>
+
+</manifest>
