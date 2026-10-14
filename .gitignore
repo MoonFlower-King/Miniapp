@@ -27,3 +27,9 @@ __pycache__/
 *.log.*
 hs_err_pid*
 replay_pid*
+
+# Local build/compile output
+build_*.txt
+compile_*.txt
+log_compile.txt
+test_output.txt
