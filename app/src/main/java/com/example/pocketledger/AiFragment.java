@@ -48,7 +48,7 @@ public class AiFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        aiManager = new AiManager();
+        aiManager = new AiManager(requireContext());
         dbHelper = DatabaseHelper.getInstance(requireContext());
         initSpeechRecognizerLauncher();
     }
@@ -216,7 +216,7 @@ public class AiFragment extends Fragment {
                 public void onError(String message) {
                     messageList.remove(aiPos);
                     chatAdapter.notifyItemRemoved(aiPos);
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+                    AiManager.handleError(requireContext(), message);
                 }
             });
         } else {
@@ -232,7 +232,7 @@ public class AiFragment extends Fragment {
                 public void onError(String message) {
                     messageList.remove(aiPos);
                     chatAdapter.notifyItemRemoved(aiPos);
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+                    AiManager.handleError(requireContext(), message);
                 }
             });
         }

@@ -44,7 +44,7 @@ public class AiAssistantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ai_assistant);
 
-        aiManager = new AiManager();
+        aiManager = new AiManager(this);
         dbHelper = DatabaseHelper.getInstance(this);
 
         initSpeechRecognizerLauncher();
@@ -207,7 +207,7 @@ public class AiAssistantActivity extends AppCompatActivity {
                 public void onError(String message) {
                     messageList.remove(aiPos);
                     chatAdapter.notifyItemRemoved(aiPos);
-                    Toast.makeText(AiAssistantActivity.this, message, Toast.LENGTH_SHORT).show();
+                    AiManager.handleError(AiAssistantActivity.this, message);
                 }
             });
         } else {
@@ -224,7 +224,7 @@ public class AiAssistantActivity extends AppCompatActivity {
                 public void onError(String message) {
                     messageList.remove(aiPos);
                     chatAdapter.notifyItemRemoved(aiPos);
-                    Toast.makeText(AiAssistantActivity.this, message, Toast.LENGTH_SHORT).show();
+                    AiManager.handleError(AiAssistantActivity.this, message);
                 }
             });
         }

@@ -14,14 +14,10 @@ android {
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        
-        // Load API key from local.properties
-        def localProperties = new Properties()
-        def localPropertiesFile = rootProject.file('local.properties')
-        if (localPropertiesFile.exists()) {
-            localProperties.load(new FileInputStream(localPropertiesFile))
-        }
-        buildConfigField "String", "DEEPSEEK_API_KEY", "\"${localProperties.getProperty('DEEPSEEK_API_KEY', '')}\""
+
+        // Release builds never embed an API key: anything compiled into the APK can be extracted.
+        // Users enter their own DeepSeek key in the app (stored in private app storage).
+        buildConfigField "String", "DEEPSEEK_API_KEY", "\"\""
     }
     
     buildFeatures {
@@ -29,6 +25,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Developer convenience only: debug builds may read DEEPSEEK_API_KEY from local.properties.
+            def localProperties = new Properties()
+            def localPropertiesFile = rootProject.file('local.properties')
+            if (localPropertiesFile.exists()) {
+                localPropertiesFile.withInputStream { localProperties.load(it) }
+            }
+            buildConfigField "String", "DEEPSEEK_API_KEY", "\"${localProperties.getProperty('DEEPSEEK_API_KEY', '')}\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

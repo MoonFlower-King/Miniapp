@@ -1,9 +1,17 @@
 package com.example.pocketledger;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputType;
+import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -27,9 +35,14 @@ public class AiManager {
 
     // Using DeepSeek API
     private static final String API_URL = "https://api.deepseek.com/chat/completions";
-    // API Key loaded securely from BuildConfig (set in local.properties)
-    private static final String API_KEY = BuildConfig.DEEPSEEK_API_KEY;
+    /** Shown when no key is configured; callers use it to open the key dialog. */
+    public static final String MISSING_KEY_MESSAGE = "请先设置 DeepSeek API Key";
+    public static final String INVALID_KEY_MESSAGE = "DeepSeek API Key 无效，请重新设置";
 
+    private static final String PREFS_NAME = "ai_settings";
+    private static final String PREF_API_KEY = "deepseek_api_key";
+
+    private final Context appContext;
     private final OkHttpClient client;
     private final Gson gson = new Gson();
 
@@ -39,7 +52,8 @@ public class AiManager {
         void onError(String message);
     }
 
-    public AiManager() {
+    public AiManager(Context context) {
+        appContext = context.getApplicationContext();
         client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
@@ -47,6 +61,11 @@ public class AiManager {
     }
 
     public void parseBill(String text, AiCallback callback) {
+        String apiKey = getApiKey(appContext);
+        if (TextUtils.isEmpty(apiKey)) {
+            sendError(callback, MISSING_KEY_MESSAGE);
+            return;
+        }
         String today = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date());
 
         String prompt = "你是一个智能记账助手。今天是 " + today + "。\n\n" +
@@ -97,7 +116,7 @@ public class AiManager {
 
         Request request = new Request.Builder()
                 .url(API_URL)
-                .addHeader("Authorization", "Bearer " + API_KEY)
+                .addHeader("Authorization", "Bearer " + apiKey)
                 .post(body)
                 .build();
 
@@ -110,7 +129,7 @@ public class AiManager {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 if (!response.isSuccessful()) {
-                    sendError(callback, "AI 服务异常: " + response.code());
+                    sendError(callback, response.code() == 401 ? INVALID_KEY_MESSAGE : "AI 服务异常: " + response.code());
                     return;
                 }
 
@@ -167,6 +186,11 @@ public class AiManager {
     }
 
     public void parseTask(String text, TaskCallback callback) {
+        String apiKey = getApiKey(appContext);
+        if (TextUtils.isEmpty(apiKey)) {
+            sendTaskError(callback, MISSING_KEY_MESSAGE);
+            return;
+        }
         String today = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date());
 
         String prompt = "你是一个任务管理助手。今天是 " + today + "。\n\n" +
@@ -208,7 +232,7 @@ public class AiManager {
 
         Request request = new Request.Builder()
                 .url(API_URL)
-                .addHeader("Authorization", "Bearer " + API_KEY)
+                .addHeader("Authorization", "Bearer " + apiKey)
                 .post(body)
                 .build();
 
@@ -221,7 +245,7 @@ public class AiManager {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 if (!response.isSuccessful()) {
-                    sendTaskError(callback, "AI 服务异常: " + response.code());
+                    sendTaskError(callback, response.code() == 401 ? INVALID_KEY_MESSAGE : "AI 服务异常: " + response.code());
                     return;
                 }
 
@@ -269,5 +293,53 @@ public class AiManager {
 
     private void sendTaskError(TaskCallback callback, String msg) {
         new Handler(Looper.getMainLooper()).post(() -> callback.onError(msg));
+    }
+
+    /** The user's own key wins; debug builds may fall back to local.properties. */
+    public static String getApiKey(Context context) {
+        String saved = prefs(context).getString(PREF_API_KEY, "");
+        if (!TextUtils.isEmpty(saved)) return saved;
+        return BuildConfig.DEEPSEEK_API_KEY;
+    }
+
+    public static void saveApiKey(Context context, String key) {
+        prefs(context).edit().putString(PREF_API_KEY, key == null ? "" : key.trim()).apply();
+    }
+
+    private static SharedPreferences prefs(Context context) {
+        return context.getApplicationContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+    }
+
+    /** Routes AI errors: a missing key opens the key dialog, everything else is a toast. */
+    public static void handleError(Context context, String message) {
+        if (MISSING_KEY_MESSAGE.equals(message) || INVALID_KEY_MESSAGE.equals(message)) {
+            showApiKeyDialog(context);
+        } else {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public static void showApiKeyDialog(Context context) {
+        EditText input = new EditText(context);
+        input.setHint("sk-...");
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        input.setSingleLine(true);
+        int padding = (int) (20 * context.getResources().getDisplayMetrics().density);
+        FrameLayout container = new FrameLayout(context);
+        container.setPadding(padding, padding / 2, padding, 0);
+        container.addView(input);
+
+        new AlertDialog.Builder(context)
+                .setTitle("设置 DeepSeek API Key")
+                .setMessage("AI 记账需要你自己的 DeepSeek API Key，仅保存在本机。可在 platform.deepseek.com 获取。")
+                .setView(container)
+                .setNegativeButton("取消", null)
+                .setPositiveButton("保存", (dialog, which) -> {
+                    String key = input.getText().toString().trim();
+                    if (key.isEmpty()) return;
+                    saveApiKey(context, key);
+                    Toast.makeText(context, "API Key 已保存，请重新发送", Toast.LENGTH_SHORT).show();
+                })
+                .show();
     }
 }
